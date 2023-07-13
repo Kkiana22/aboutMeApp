@@ -15,9 +15,9 @@ struct ContentView: View {
     @State private var fact5 = ""
     var body: some View {
         ZStack {
-            Color(.systemBlue)
+            Image("Background")
                 .ignoresSafeArea()
-            VStack(alignment:.center, spacing: 21.0) {
+            VStack(alignment:.center) {
                 
                 Group {
                     Text("About Me")
@@ -25,15 +25,19 @@ struct ContentView: View {
                         .fontWeight(.bold)
                     Text("Hey! I'm Kiana Lee")
                         .foregroundColor(Color.white)
-                        Image("Me")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.bottom)
-                            .frame(width:300)
-                            .cornerRadius(20)
+                    
+                    Image("Me")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.bottom)
+                        .frame(width:300)
+                        .cornerRadius(20)
+                    
+                    
                     Text("Hey! I'm Kiana Lee. I'm a rising freshman at Westview High School. Have a good day!")
                         .foregroundColor(Color.white)
                 }
+                .padding()
                 
                 
                 Button("Click here for fun facts about me!") {
@@ -45,21 +49,33 @@ struct ContentView: View {
                 
                 .buttonStyle(.borderedProminent)
                 .tint(.black)
+           
+                VStack(alignment: .center) {
+                    Text(fact1)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .padding(1)
                     
-               Text(fact1)
-                    .padding()
-            Text(fact2)
-            Text(fact3)
-            Text(fact4)
-               Spacer()
-            Spacer()
-           Spacer()
-          
-                
+                    Text(fact2)
+                        .multilineTextAlignment(.center)
+                        .padding(1)
+                        .foregroundColor(Color.white)
+                 
+                    Text(fact3)
+                        .multilineTextAlignment(.center)
+                        .padding(1)
+                        .foregroundColor(Color.white)
+                      
+                    Text(fact4)
+                        .multilineTextAlignment(.center)
+                        .padding(1)
+                        .foregroundColor(Color.white)
                
-                
-                
+                }
+                .padding()
+        
             }
+    
                 
             }
         }
